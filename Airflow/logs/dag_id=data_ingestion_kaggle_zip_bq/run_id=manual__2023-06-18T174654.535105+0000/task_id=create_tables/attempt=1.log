@@ -1,0 +1,75 @@
+[2023-06-18T17:51:20.202+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_kaggle_zip_bq.create_tables manual__2023-06-18T17:46:54.535105+00:00 [queued]>
+[2023-06-18T17:51:20.223+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_kaggle_zip_bq.create_tables manual__2023-06-18T17:46:54.535105+00:00 [queued]>
+[2023-06-18T17:51:20.224+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-18T17:51:20.225+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 2
+[2023-06-18T17:51:20.226+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-18T17:51:20.253+0000] {taskinstance.py:1303} INFO - Executing <Task(PythonOperator): create_tables> on 2023-06-18 17:46:54.535105+00:00
+[2023-06-18T17:51:20.265+0000] {standard_task_runner.py:55} INFO - Started process 11368 to run task
+[2023-06-18T17:51:20.270+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_kaggle_zip_bq', 'create_tables', 'manual__2023-06-18T17:46:54.535105+00:00', '--job-id', '64', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_kaggle_zip_bq.py', '--cfg-path', '/tmp/tmp5o2bqu44']
+[2023-06-18T17:51:20.273+0000] {standard_task_runner.py:83} INFO - Job 64: Subtask create_tables
+[2023-06-18T17:51:20.377+0000] {task_command.py:388} INFO - Running <TaskInstance: data_ingestion_kaggle_zip_bq.create_tables manual__2023-06-18T17:46:54.535105+00:00 [running]> on host d0aad92f0cfd
+[2023-06-18T17:51:20.479+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_kaggle_zip_bq
+AIRFLOW_CTX_TASK_ID=create_tables
+AIRFLOW_CTX_EXECUTION_DATE=2023-06-18T17:46:54.535105+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-06-18T17:46:54.535105+00:00
+[2023-06-18T17:51:22.844+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.KOTAKBANK
+[2023-06-18T17:51:23.518+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.BAJAJ-AUTO
+[2023-06-18T17:51:24.160+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.POWERGRID
+[2023-06-18T17:51:24.753+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.MM
+[2023-06-18T17:51:25.334+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.INDUSINDBK
+[2023-06-18T17:51:25.927+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.UPL
+[2023-06-18T17:51:26.529+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.HDFC
+[2023-06-18T17:51:27.122+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.ULTRACEMCO
+[2023-06-18T17:51:27.703+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.ZEEL
+[2023-06-18T17:51:28.298+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.TECHM
+[2023-06-18T17:51:28.902+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.TITAN
+[2023-06-18T17:51:29.519+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.ICICIBANK
+[2023-06-18T17:51:30.177+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.BRITANNIA
+[2023-06-18T17:51:30.837+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.BAJAJFINSV
+[2023-06-18T17:51:31.395+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.SUNPHARMA
+[2023-06-18T17:51:32.007+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.IOC
+[2023-06-18T17:51:32.651+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.TATAMOTORS
+[2023-06-18T17:51:33.249+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.CIPLA
+[2023-06-18T17:51:33.980+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.VEDL
+[2023-06-18T17:51:34.566+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.ITC
+[2023-06-18T17:51:35.236+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.HDFCBANK
+[2023-06-18T17:51:35.869+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.BHARTIARTL
+[2023-06-18T17:51:36.514+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.MARUTI
+[2023-06-18T17:51:37.160+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.NTPC
+[2023-06-18T17:51:37.782+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.BPCL
+[2023-06-18T17:51:38.381+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.LT
+[2023-06-18T17:51:38.998+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.ASIANPAINT
+[2023-06-18T17:51:39.596+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.stock_metadata
+[2023-06-18T17:51:40.183+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.DRREDDY
+[2023-06-18T17:51:40.836+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.BAJFINANCE
+[2023-06-18T17:51:41.543+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.TCS
+[2023-06-18T17:51:42.142+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.EICHERMOT
+[2023-06-18T17:51:42.717+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.INFRATEL
+[2023-06-18T17:51:43.306+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.HINDALCO
+[2023-06-18T17:51:43.927+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.TATASTEEL
+[2023-06-18T17:51:44.544+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.SHREECEM
+[2023-06-18T17:51:45.153+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.ONGC
+[2023-06-18T17:51:45.853+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.SBIN
+[2023-06-18T17:51:46.552+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.HINDUNILVR
+[2023-06-18T17:51:47.247+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.HEROMOTOCO
+[2023-06-18T17:51:47.820+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.JSWSTEEL
+[2023-06-18T17:51:48.468+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.INFY
+[2023-06-18T17:51:49.096+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.HCLTECH
+[2023-06-18T17:51:50.027+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.COALINDIA
+[2023-06-18T17:51:50.590+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.RELIANCE
+[2023-06-18T17:51:51.299+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.WIPRO
+[2023-06-18T17:51:51.923+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.NESTLEIND
+[2023-06-18T17:51:52.577+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.GRASIM
+[2023-06-18T17:51:53.093+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.ADANIPORTS
+[2023-06-18T17:51:53.730+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.GAIL
+[2023-06-18T17:51:54.278+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.AXISBANK
+[2023-06-18T17:51:54.921+0000] {logging_mixin.py:137} INFO - Created table prime-byway-387902.project2_data.NIFTY50_all
+[2023-06-18T17:51:54.922+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-06-18T17:51:54.941+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=data_ingestion_kaggle_zip_bq, task_id=create_tables, execution_date=20230618T174654, start_date=20230618T175120, end_date=20230618T175154
+[2023-06-18T17:51:54.982+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-06-18T17:51:55.013+0000] {taskinstance.py:2585} INFO - 0 downstream tasks scheduled from follow-on schedule check

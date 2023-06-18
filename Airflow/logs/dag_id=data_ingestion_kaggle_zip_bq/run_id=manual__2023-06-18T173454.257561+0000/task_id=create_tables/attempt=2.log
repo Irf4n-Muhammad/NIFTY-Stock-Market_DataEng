@@ -1,0 +1,42 @@
+[2023-06-18T17:44:28.989+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_kaggle_zip_bq.create_tables manual__2023-06-18T17:34:54.257561+00:00 [queued]>
+[2023-06-18T17:44:29.018+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_kaggle_zip_bq.create_tables manual__2023-06-18T17:34:54.257561+00:00 [queued]>
+[2023-06-18T17:44:29.019+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-18T17:44:29.020+0000] {taskinstance.py:1283} INFO - Starting attempt 2 of 2
+[2023-06-18T17:44:29.021+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-18T17:44:29.053+0000] {taskinstance.py:1303} INFO - Executing <Task(PythonOperator): create_tables> on 2023-06-18 17:34:54.257561+00:00
+[2023-06-18T17:44:29.069+0000] {standard_task_runner.py:55} INFO - Started process 10998 to run task
+[2023-06-18T17:44:29.073+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_kaggle_zip_bq', 'create_tables', 'manual__2023-06-18T17:34:54.257561+00:00', '--job-id', '60', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_kaggle_zip_bq.py', '--cfg-path', '/tmp/tmpyowg9q75']
+[2023-06-18T17:44:29.075+0000] {standard_task_runner.py:83} INFO - Job 60: Subtask create_tables
+[2023-06-18T17:44:29.224+0000] {task_command.py:388} INFO - Running <TaskInstance: data_ingestion_kaggle_zip_bq.create_tables manual__2023-06-18T17:34:54.257561+00:00 [running]> on host d0aad92f0cfd
+[2023-06-18T17:44:29.369+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_kaggle_zip_bq
+AIRFLOW_CTX_TASK_ID=create_tables
+AIRFLOW_CTX_EXECUTION_DATE=2023-06-18T17:34:54.257561+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-06-18T17:34:54.257561+00:00
+[2023-06-18T17:44:32.177+0000] {taskinstance.py:1775} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/data_ingestion_kaggle_zip_bq.py", line 67, in create_multiple_tables
+    table = client.create_table(table)  # Make an API request.
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/client.py", line 755, in create_table
+    timeout=timeout,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/client.py", line 782, in _call_api
+    return call()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/retry.py", line 288, in retry_wrapped_func
+    on_error=on_error,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/retry.py", line 190, in retry_target
+    return target()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/_http/__init__.py", line 494, in api_request
+    raise exceptions.from_http_response(response)
+google.api_core.exceptions.BadRequest: 400 POST https://bigquery.googleapis.com/bigquery/v2/projects/prime-byway-387902/datasets/project2_data/tables?prettyPrint=false: Error while reading table: KOTAKBANK, error message: Failed to expand table KOTAKBANK with file pattern gs://myproject1-delay-airline/raw3/KOTAKBANK.parquet: matched no files. File: gs://myproject1-delay-airline/raw3/KOTAKBANK.parquet
+[2023-06-18T17:44:32.214+0000] {taskinstance.py:1326} INFO - Marking task as FAILED. dag_id=data_ingestion_kaggle_zip_bq, task_id=create_tables, execution_date=20230618T173454, start_date=20230618T174428, end_date=20230618T174432
+[2023-06-18T17:44:32.253+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 60 for task create_tables (400 POST https://bigquery.googleapis.com/bigquery/v2/projects/prime-byway-387902/datasets/project2_data/tables?prettyPrint=false: Error while reading table: KOTAKBANK, error message: Failed to expand table KOTAKBANK with file pattern gs://myproject1-delay-airline/raw3/KOTAKBANK.parquet: matched no files. File: gs://myproject1-delay-airline/raw3/KOTAKBANK.parquet; 10998)
+[2023-06-18T17:44:32.280+0000] {local_task_job.py:212} INFO - Task exited with return code 1
+[2023-06-18T17:44:32.310+0000] {taskinstance.py:2585} INFO - 0 downstream tasks scheduled from follow-on schedule check

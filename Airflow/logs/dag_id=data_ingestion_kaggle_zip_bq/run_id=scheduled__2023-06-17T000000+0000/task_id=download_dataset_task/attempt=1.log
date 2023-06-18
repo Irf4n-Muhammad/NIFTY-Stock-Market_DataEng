@@ -1,0 +1,33 @@
+[2023-06-18T16:55:54.762+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_kaggle_zip_bq.download_dataset_task scheduled__2023-06-17T00:00:00+00:00 [queued]>
+[2023-06-18T16:55:54.781+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_kaggle_zip_bq.download_dataset_task scheduled__2023-06-17T00:00:00+00:00 [queued]>
+[2023-06-18T16:55:54.782+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-18T16:55:54.783+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 2
+[2023-06-18T16:55:54.784+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-18T16:55:54.809+0000] {taskinstance.py:1303} INFO - Executing <Task(BashOperator): download_dataset_task> on 2023-06-17 00:00:00+00:00
+[2023-06-18T16:55:54.825+0000] {standard_task_runner.py:55} INFO - Started process 8352 to run task
+[2023-06-18T16:55:54.829+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_kaggle_zip_bq', 'download_dataset_task', 'scheduled__2023-06-17T00:00:00+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_kaggle_zip_bq.py', '--cfg-path', '/tmp/tmpk2i9no0s']
+[2023-06-18T16:55:54.832+0000] {standard_task_runner.py:83} INFO - Job 33: Subtask download_dataset_task
+[2023-06-18T16:55:54.938+0000] {task_command.py:388} INFO - Running <TaskInstance: data_ingestion_kaggle_zip_bq.download_dataset_task scheduled__2023-06-17T00:00:00+00:00 [running]> on host d0aad92f0cfd
+[2023-06-18T16:55:55.045+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_kaggle_zip_bq
+AIRFLOW_CTX_TASK_ID=download_dataset_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-06-17T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-06-17T00:00:00+00:00
+[2023-06-18T16:55:55.049+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-18T16:55:55.054+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n        cd /opt/*** &&\n        if [ ! -d corona-virus-report ]; then\n            mkdir corona-virus-report &&\n            cd corona-virus-report &&\n            kaggle datasets download -d imdevskp/corona-virus-report &&\n            unzip corona-virus-report.zip && echo "Task succeeded" || echo "Task failed" && \n            rm corona-virus-report.zip &&\n            ls\n        else\n            cd corona-virus-report &&\n            ls\n        fi\n        ']
+[2023-06-18T16:55:55.091+0000] {subprocess.py:86} INFO - Output:
+[2023-06-18T16:55:55.162+0000] {subprocess.py:93} INFO - country_wise_latest.parquet
+[2023-06-18T16:55:55.163+0000] {subprocess.py:93} INFO - covid_19_clean_complete.parquet
+[2023-06-18T16:55:55.164+0000] {subprocess.py:93} INFO - day_wise.parquet
+[2023-06-18T16:55:55.164+0000] {subprocess.py:93} INFO - full_grouped.parquet
+[2023-06-18T16:55:55.165+0000] {subprocess.py:93} INFO - usa_county_wise.parquet
+[2023-06-18T16:55:55.166+0000] {subprocess.py:93} INFO - worldometer_data.parquet
+[2023-06-18T16:55:55.167+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-06-18T16:55:55.214+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=data_ingestion_kaggle_zip_bq, task_id=download_dataset_task, execution_date=20230617T000000, start_date=20230618T165554, end_date=20230618T165555
+[2023-06-18T16:55:55.283+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-06-18T16:55:55.376+0000] {taskinstance.py:2585} INFO - 1 downstream tasks scheduled from follow-on schedule check

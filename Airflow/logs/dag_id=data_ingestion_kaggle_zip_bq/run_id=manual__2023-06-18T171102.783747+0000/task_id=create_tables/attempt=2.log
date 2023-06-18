@@ -1,0 +1,42 @@
+[2023-06-18T17:17:23.810+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_kaggle_zip_bq.create_tables manual__2023-06-18T17:11:02.783747+00:00 [queued]>
+[2023-06-18T17:17:23.835+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_kaggle_zip_bq.create_tables manual__2023-06-18T17:11:02.783747+00:00 [queued]>
+[2023-06-18T17:17:23.837+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-18T17:17:23.838+0000] {taskinstance.py:1283} INFO - Starting attempt 2 of 2
+[2023-06-18T17:17:23.839+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-18T17:17:23.868+0000] {taskinstance.py:1303} INFO - Executing <Task(PythonOperator): create_tables> on 2023-06-18 17:11:02.783747+00:00
+[2023-06-18T17:17:23.882+0000] {standard_task_runner.py:55} INFO - Started process 9533 to run task
+[2023-06-18T17:17:23.886+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_kaggle_zip_bq', 'create_tables', 'manual__2023-06-18T17:11:02.783747+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_kaggle_zip_bq.py', '--cfg-path', '/tmp/tmp8ad_2ujz']
+[2023-06-18T17:17:23.889+0000] {standard_task_runner.py:83} INFO - Job 51: Subtask create_tables
+[2023-06-18T17:17:24.094+0000] {task_command.py:388} INFO - Running <TaskInstance: data_ingestion_kaggle_zip_bq.create_tables manual__2023-06-18T17:11:02.783747+00:00 [running]> on host d0aad92f0cfd
+[2023-06-18T17:17:24.271+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_kaggle_zip_bq
+AIRFLOW_CTX_TASK_ID=create_tables
+AIRFLOW_CTX_EXECUTION_DATE=2023-06-18T17:11:02.783747+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-06-18T17:11:02.783747+00:00
+[2023-06-18T17:17:28.328+0000] {taskinstance.py:1775} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/data_ingestion_kaggle_zip_bq.py", line 67, in create_multiple_tables
+    table = client.create_table(table)  # Make an API request.
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/client.py", line 755, in create_table
+    timeout=timeout,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/client.py", line 782, in _call_api
+    return call()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/retry.py", line 288, in retry_wrapped_func
+    on_error=on_error,
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/retry.py", line 190, in retry_target
+    return target()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/_http/__init__.py", line 494, in api_request
+    raise exceptions.from_http_response(response)
+google.api_core.exceptions.Conflict: 409 POST https://bigquery.googleapis.com/bigquery/v2/projects/prime-byway-387902/datasets/project1_data/tables?prettyPrint=false: Already Exists: Table prime-byway-387902:project1_data.day_wise
+[2023-06-18T17:17:28.364+0000] {taskinstance.py:1326} INFO - Marking task as FAILED. dag_id=data_ingestion_kaggle_zip_bq, task_id=create_tables, execution_date=20230618T171102, start_date=20230618T171723, end_date=20230618T171728
+[2023-06-18T17:17:28.400+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 51 for task create_tables (409 POST https://bigquery.googleapis.com/bigquery/v2/projects/prime-byway-387902/datasets/project1_data/tables?prettyPrint=false: Already Exists: Table prime-byway-387902:project1_data.day_wise; 9533)
+[2023-06-18T17:17:28.447+0000] {local_task_job.py:212} INFO - Task exited with return code 1
+[2023-06-18T17:17:28.476+0000] {taskinstance.py:2585} INFO - 0 downstream tasks scheduled from follow-on schedule check

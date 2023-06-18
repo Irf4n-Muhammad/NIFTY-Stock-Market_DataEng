@@ -1,0 +1,136 @@
+[2023-06-18T17:21:25.617+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_kaggle_zip_bq.download_dataset_task manual__2023-06-18T17:21:10.003102+00:00 [queued]>
+[2023-06-18T17:21:25.644+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_kaggle_zip_bq.download_dataset_task manual__2023-06-18T17:21:10.003102+00:00 [queued]>
+[2023-06-18T17:21:25.648+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-18T17:21:25.649+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 2
+[2023-06-18T17:21:25.650+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-18T17:21:25.682+0000] {taskinstance.py:1303} INFO - Executing <Task(BashOperator): download_dataset_task> on 2023-06-18 17:21:10.003102+00:00
+[2023-06-18T17:21:25.706+0000] {standard_task_runner.py:55} INFO - Started process 9746 to run task
+[2023-06-18T17:21:25.710+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_kaggle_zip_bq', 'download_dataset_task', 'manual__2023-06-18T17:21:10.003102+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_kaggle_zip_bq.py', '--cfg-path', '/tmp/tmpdpl7twhc']
+[2023-06-18T17:21:25.713+0000] {standard_task_runner.py:83} INFO - Job 52: Subtask download_dataset_task
+[2023-06-18T17:21:25.851+0000] {task_command.py:388} INFO - Running <TaskInstance: data_ingestion_kaggle_zip_bq.download_dataset_task manual__2023-06-18T17:21:10.003102+00:00 [running]> on host d0aad92f0cfd
+[2023-06-18T17:21:25.978+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_kaggle_zip_bq
+AIRFLOW_CTX_TASK_ID=download_dataset_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-06-18T17:21:10.003102+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-06-18T17:21:10.003102+00:00
+[2023-06-18T17:21:25.982+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-18T17:21:26.004+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', '\n        cd /opt/*** &&\n        if [ ! -d nifty50-stock-market-data ]; then\n            mkdir nifty50-stock-market-data &&\n            cd nifty50-stock-market-data &&\n            kaggle datasets download -d rohanrao/nifty50-stock-market-data &&\n            unzip nifty50-stock-market-data.zip && echo "Task succeeded" || echo "Task failed" && \n            rm nifty50-stock-market-data.zip &&\n            ls\n        else\n            cd nifty50-stock-market-data &&\n            ls\n        fi\n        ']
+[2023-06-18T17:21:26.044+0000] {subprocess.py:86} INFO - Output:
+[2023-06-18T17:21:29.278+0000] {subprocess.py:93} INFO - Downloading nifty50-stock-market-data.zip to /opt/***/nifty50-stock-market-data
+[2023-06-18T17:23:40.028+0000] {subprocess.py:93} INFO -   0%|          | 0.00/18.4M [00:00<?, ?B/s]  5%|▌         | 1.00M/18.4M [00:06<01:45, 173kB/s] 11%|█         | 2.00M/18.4M [00:12<01:44, 165kB/s] 16%|█▋        | 3.00M/18.4M [00:19<01:42, 158kB/s] 22%|██▏       | 4.00M/18.4M [00:25<01:28, 170kB/s] 27%|██▋       | 5.00M/18.4M [00:31<01:23, 169kB/s] 33%|███▎      | 6.00M/18.4M [00:39<01:25, 153kB/s] 38%|███▊      | 7.00M/18.4M [00:45<01:15, 158kB/s] 43%|████▎     | 8.00M/18.4M [00:53<01:12, 150kB/s] 49%|████▉     | 9.00M/18.4M [00:59<01:04, 153kB/s] 54%|█████▍    | 10.0M/18.4M [01:05<00:54, 163kB/s] 60%|█████▉    | 11.0M/18.4M [01:11<00:47, 163kB/s] 65%|██████▌   | 12.0M/18.4M [01:18<00:41, 162kB/s] 71%|███████   | 13.0M/18.4M [01:27<00:38, 146kB/s] 76%|███████▌  | 14.0M/18.4M [01:35<00:33, 137kB/s] 81%|████████▏ | 15.0M/18.4M [01:44<00:26, 134kB/s] 87%|████████▋ | 16.0M/18.4M [01:51<00:18, 134kB/s] 92%|█████████▏| 17.0M/18.4M [01:59<00:10, 136kB/s] 98%|█████████▊| 18.0M/18.4M [02:07<00:03, 134kB/s]100%|██████████| 18.4M/18.4M [02:10<00:00, 134kB/s]100%|██████████| 18.4M/18.4M [02:10<00:00, 148kB/s]
+[2023-06-18T17:23:40.081+0000] {subprocess.py:93} INFO - 
+[2023-06-18T17:23:40.526+0000] {subprocess.py:93} INFO - Archive:  nifty50-stock-market-data.zip
+[2023-06-18T17:23:40.536+0000] {subprocess.py:93} INFO -   inflating: ADANIPORTS.csv
+[2023-06-18T17:23:40.549+0000] {subprocess.py:93} INFO -   inflating: ASIANPAINT.csv
+[2023-06-18T17:23:40.563+0000] {subprocess.py:93} INFO -   inflating: AXISBANK.csv
+[2023-06-18T17:23:40.571+0000] {subprocess.py:93} INFO -   inflating: BAJAJ-AUTO.csv
+[2023-06-18T17:23:40.580+0000] {subprocess.py:93} INFO -   inflating: BAJAJFINSV.csv
+[2023-06-18T17:23:40.595+0000] {subprocess.py:93} INFO -   inflating: BAJFINANCE.csv
+[2023-06-18T17:23:40.613+0000] {subprocess.py:93} INFO -   inflating: BHARTIARTL.csv
+[2023-06-18T17:23:40.631+0000] {subprocess.py:93} INFO -   inflating: BPCL.csv
+[2023-06-18T17:23:40.648+0000] {subprocess.py:93} INFO -   inflating: BRITANNIA.csv
+[2023-06-18T17:23:40.664+0000] {subprocess.py:93} INFO -   inflating: CIPLA.csv
+[2023-06-18T17:23:40.675+0000] {subprocess.py:93} INFO -   inflating: COALINDIA.csv
+[2023-06-18T17:23:40.691+0000] {subprocess.py:93} INFO -   inflating: DRREDDY.csv
+[2023-06-18T17:23:40.709+0000] {subprocess.py:93} INFO -   inflating: EICHERMOT.csv
+[2023-06-18T17:23:40.726+0000] {subprocess.py:93} INFO -   inflating: GAIL.csv
+[2023-06-18T17:23:40.743+0000] {subprocess.py:93} INFO -   inflating: GRASIM.csv
+[2023-06-18T17:23:40.762+0000] {subprocess.py:93} INFO -   inflating: HCLTECH.csv
+[2023-06-18T17:23:40.779+0000] {subprocess.py:93} INFO -   inflating: HDFC.csv
+[2023-06-18T17:23:40.792+0000] {subprocess.py:93} INFO -   inflating: HDFCBANK.csv
+[2023-06-18T17:23:40.818+0000] {subprocess.py:93} INFO -   inflating: HEROMOTOCO.csv
+[2023-06-18T17:23:40.825+0000] {subprocess.py:93} INFO -   inflating: HINDALCO.csv
+[2023-06-18T17:23:40.840+0000] {subprocess.py:93} INFO -   inflating: HINDUNILVR.csv
+[2023-06-18T17:23:40.860+0000] {subprocess.py:93} INFO -   inflating: ICICIBANK.csv
+[2023-06-18T17:23:40.879+0000] {subprocess.py:93} INFO -   inflating: INDUSINDBK.csv
+[2023-06-18T17:23:40.881+0000] {subprocess.py:93} INFO -   inflating: INFRATEL.csv
+[2023-06-18T17:23:40.898+0000] {subprocess.py:93} INFO -   inflating: INFY.csv
+[2023-06-18T17:23:40.909+0000] {subprocess.py:93} INFO -   inflating: IOC.csv
+[2023-06-18T17:23:40.928+0000] {subprocess.py:93} INFO -   inflating: ITC.csv
+[2023-06-18T17:23:40.948+0000] {subprocess.py:93} INFO -   inflating: JSWSTEEL.csv
+[2023-06-18T17:23:40.964+0000] {subprocess.py:93} INFO -   inflating: KOTAKBANK.csv
+[2023-06-18T17:23:40.976+0000] {subprocess.py:93} INFO -   inflating: LT.csv
+[2023-06-18T17:23:40.986+0000] {subprocess.py:93} INFO -   inflating: MARUTI.csv
+[2023-06-18T17:23:41.000+0000] {subprocess.py:93} INFO -   inflating: MM.csv
+[2023-06-18T17:23:41.011+0000] {subprocess.py:93} INFO -   inflating: NESTLEIND.csv
+[2023-06-18T17:23:41.637+0000] {subprocess.py:93} INFO -   inflating: NIFTY50_all.csv
+[2023-06-18T17:23:41.645+0000] {subprocess.py:93} INFO -   inflating: NTPC.csv
+[2023-06-18T17:23:41.656+0000] {subprocess.py:93} INFO -   inflating: ONGC.csv
+[2023-06-18T17:23:41.663+0000] {subprocess.py:93} INFO -   inflating: POWERGRID.csv
+[2023-06-18T17:23:41.719+0000] {subprocess.py:93} INFO -   inflating: RELIANCE.csv
+[2023-06-18T17:23:41.735+0000] {subprocess.py:93} INFO -   inflating: SBIN.csv
+[2023-06-18T17:23:41.765+0000] {subprocess.py:93} INFO -   inflating: SHREECEM.csv
+[2023-06-18T17:23:41.780+0000] {subprocess.py:93} INFO -   inflating: SUNPHARMA.csv
+[2023-06-18T17:23:41.797+0000] {subprocess.py:93} INFO -   inflating: TATAMOTORS.csv
+[2023-06-18T17:23:41.809+0000] {subprocess.py:93} INFO -   inflating: TATASTEEL.csv
+[2023-06-18T17:23:41.824+0000] {subprocess.py:93} INFO -   inflating: TCS.csv
+[2023-06-18T17:23:41.829+0000] {subprocess.py:93} INFO -   inflating: TECHM.csv
+[2023-06-18T17:23:41.844+0000] {subprocess.py:93} INFO -   inflating: TITAN.csv
+[2023-06-18T17:23:41.865+0000] {subprocess.py:93} INFO -   inflating: ULTRACEMCO.csv
+[2023-06-18T17:23:41.867+0000] {subprocess.py:93} INFO -   inflating: UPL.csv
+[2023-06-18T17:23:41.883+0000] {subprocess.py:93} INFO -   inflating: VEDL.csv
+[2023-06-18T17:23:41.891+0000] {subprocess.py:93} INFO -   inflating: WIPRO.csv
+[2023-06-18T17:23:41.905+0000] {subprocess.py:93} INFO -   inflating: ZEEL.csv
+[2023-06-18T17:23:41.908+0000] {subprocess.py:93} INFO -   inflating: stock_metadata.csv
+[2023-06-18T17:23:41.910+0000] {subprocess.py:93} INFO - Task succeeded
+[2023-06-18T17:23:41.963+0000] {subprocess.py:93} INFO - ADANIPORTS.csv
+[2023-06-18T17:23:41.964+0000] {subprocess.py:93} INFO - ASIANPAINT.csv
+[2023-06-18T17:23:41.973+0000] {subprocess.py:93} INFO - AXISBANK.csv
+[2023-06-18T17:23:41.975+0000] {subprocess.py:93} INFO - BAJAJ-AUTO.csv
+[2023-06-18T17:23:41.977+0000] {subprocess.py:93} INFO - BAJAJFINSV.csv
+[2023-06-18T17:23:41.978+0000] {subprocess.py:93} INFO - BAJFINANCE.csv
+[2023-06-18T17:23:41.979+0000] {subprocess.py:93} INFO - BHARTIARTL.csv
+[2023-06-18T17:23:41.981+0000] {subprocess.py:93} INFO - BPCL.csv
+[2023-06-18T17:23:41.982+0000] {subprocess.py:93} INFO - BRITANNIA.csv
+[2023-06-18T17:23:41.983+0000] {subprocess.py:93} INFO - CIPLA.csv
+[2023-06-18T17:23:41.984+0000] {subprocess.py:93} INFO - COALINDIA.csv
+[2023-06-18T17:23:41.985+0000] {subprocess.py:93} INFO - DRREDDY.csv
+[2023-06-18T17:23:41.986+0000] {subprocess.py:93} INFO - EICHERMOT.csv
+[2023-06-18T17:23:41.987+0000] {subprocess.py:93} INFO - GAIL.csv
+[2023-06-18T17:23:41.988+0000] {subprocess.py:93} INFO - GRASIM.csv
+[2023-06-18T17:23:41.989+0000] {subprocess.py:93} INFO - HCLTECH.csv
+[2023-06-18T17:23:41.990+0000] {subprocess.py:93} INFO - HDFC.csv
+[2023-06-18T17:23:41.991+0000] {subprocess.py:93} INFO - HDFCBANK.csv
+[2023-06-18T17:23:41.993+0000] {subprocess.py:93} INFO - HEROMOTOCO.csv
+[2023-06-18T17:23:41.994+0000] {subprocess.py:93} INFO - HINDALCO.csv
+[2023-06-18T17:23:41.995+0000] {subprocess.py:93} INFO - HINDUNILVR.csv
+[2023-06-18T17:23:41.996+0000] {subprocess.py:93} INFO - ICICIBANK.csv
+[2023-06-18T17:23:41.997+0000] {subprocess.py:93} INFO - INDUSINDBK.csv
+[2023-06-18T17:23:41.998+0000] {subprocess.py:93} INFO - INFRATEL.csv
+[2023-06-18T17:23:41.999+0000] {subprocess.py:93} INFO - INFY.csv
+[2023-06-18T17:23:42.000+0000] {subprocess.py:93} INFO - IOC.csv
+[2023-06-18T17:23:42.001+0000] {subprocess.py:93} INFO - ITC.csv
+[2023-06-18T17:23:42.002+0000] {subprocess.py:93} INFO - JSWSTEEL.csv
+[2023-06-18T17:23:42.003+0000] {subprocess.py:93} INFO - KOTAKBANK.csv
+[2023-06-18T17:23:42.004+0000] {subprocess.py:93} INFO - LT.csv
+[2023-06-18T17:23:42.005+0000] {subprocess.py:93} INFO - MARUTI.csv
+[2023-06-18T17:23:42.006+0000] {subprocess.py:93} INFO - MM.csv
+[2023-06-18T17:23:42.007+0000] {subprocess.py:93} INFO - NESTLEIND.csv
+[2023-06-18T17:23:42.009+0000] {subprocess.py:93} INFO - NIFTY50_all.csv
+[2023-06-18T17:23:42.010+0000] {subprocess.py:93} INFO - NTPC.csv
+[2023-06-18T17:23:42.011+0000] {subprocess.py:93} INFO - ONGC.csv
+[2023-06-18T17:23:42.012+0000] {subprocess.py:93} INFO - POWERGRID.csv
+[2023-06-18T17:23:42.014+0000] {subprocess.py:93} INFO - RELIANCE.csv
+[2023-06-18T17:23:42.015+0000] {subprocess.py:93} INFO - SBIN.csv
+[2023-06-18T17:23:42.016+0000] {subprocess.py:93} INFO - SHREECEM.csv
+[2023-06-18T17:23:42.017+0000] {subprocess.py:93} INFO - SUNPHARMA.csv
+[2023-06-18T17:23:42.018+0000] {subprocess.py:93} INFO - TATAMOTORS.csv
+[2023-06-18T17:23:42.019+0000] {subprocess.py:93} INFO - TATASTEEL.csv
+[2023-06-18T17:23:42.020+0000] {subprocess.py:93} INFO - TCS.csv
+[2023-06-18T17:23:42.021+0000] {subprocess.py:93} INFO - TECHM.csv
+[2023-06-18T17:23:42.022+0000] {subprocess.py:93} INFO - TITAN.csv
+[2023-06-18T17:23:42.024+0000] {subprocess.py:93} INFO - ULTRACEMCO.csv
+[2023-06-18T17:23:42.026+0000] {subprocess.py:93} INFO - UPL.csv
+[2023-06-18T17:23:42.027+0000] {subprocess.py:93} INFO - VEDL.csv
+[2023-06-18T17:23:42.028+0000] {subprocess.py:93} INFO - WIPRO.csv
+[2023-06-18T17:23:42.029+0000] {subprocess.py:93} INFO - ZEEL.csv
+[2023-06-18T17:23:42.030+0000] {subprocess.py:93} INFO - stock_metadata.csv
+[2023-06-18T17:23:42.045+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-06-18T17:23:43.108+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=data_ingestion_kaggle_zip_bq, task_id=download_dataset_task, execution_date=20230618T172110, start_date=20230618T172125, end_date=20230618T172343
+[2023-06-18T17:23:43.354+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-06-18T17:23:43.581+0000] {taskinstance.py:2585} INFO - 1 downstream tasks scheduled from follow-on schedule check
