@@ -41,8 +41,7 @@ The choosen technologies is variative and depends on the case and condition. The
 - Google Data Studio
 
 ## 4. Data Architecture:
-<img width="700" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_COVID19-Dataset/assets/121205860/6f76020a-5b27-4935-9878-af6bd7d388b3">
-
+<img width="700" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_NIFTY-50-Stock-Market-Data/assets/121205860/90760468-bdb7-4997-a624-e46f4da061cc">
 
 ## 5. Data Description:
 
@@ -139,35 +138,19 @@ It's pretty simple, you can connect your bigquery with google data studio and us
 
 These are my dashboard:
 
-<img width="700" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_COVID19-Dataset/assets/121205860/82b1b5ae-6632-4b11-ae01-bda45ccc8df2">
-<img width="700" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_COVID19-Dataset/assets/121205860/2a61fa8c-7de7-4759-80a5-0c16b90a785a">
+<img width="725" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_NIFTY-50-Stock-Market-Data/assets/121205860/9f39fa24-adfc-43e8-9c3c-2bda5d5d8006">
+<img width="720" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_NIFTY-50-Stock-Market-Data/assets/121205860/15c07694-dfa6-497d-b841-104f7ac13a28">
 
-From this two data visualization, we could answer our question:
 
-#### 1. What's country has the most confirmed COVID-19 patient?
+From this two data visualization, we could get many information:
+1. The most expensive stocks since 2000 - 2021
+2. The progress of stock indicator in every year
+3. The industrial category that going up and down in different era
+4. Analyze why certain stock was booming and others was not
+5. Find the pattern of similar situation that can use to predict the future stocks
+6. etc
 
-Answer: (Graph 1) America, with 27.1% confirmed COVID-19 patient in the world are from America.
 
-#### 2. What's the death probability of the COVID-19 patient?
-
-Answer: (Graph 1) We could see from the graph, the increase of the death and confirmed patient has the same pattern. So we could calculate it to be:
-Death Ratio = Total death / Confirmed patient x 100 = 43.384.904 / 828.508.482 x 100 = 5.236 %
-
-#### So the death probability of COVID-19 patient is 5.236 %
-
-#### 3. What's region(continent) has the least number of COVID-19 patient?
-
-Answer: (Graph 1) From the map, we could say Africa and Australia has smaller number compared to other continents. However, We still has shortage of data to get the reason why.
-
-#### 4. What are factor that impact the spread of COVID-19 virus?
-
-Answer: (Graph 2) The graph shows us the ratio of the covid-19 patient by the whole population is generally has higher position for small population country. It means that most of the people in small country has higher probability to get infected rather than the big country, even though the number of patients is still less than big country.
-
-#### 5. What's country has the highes probability of getting infected by COVID-19?
-
-Answer: (Graph 2) Qatar position in the first place with 4% probability. It's pretty high comparing to other countries, which the second position only have 2% probability.
-
-Those are the question we can answer from our graph. However, there are so many information we haven't answered yet, so you can dig more information from that graph by yourself.
 
 ## Reference Link:
 
