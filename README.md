@@ -10,7 +10,8 @@ Suppose a quant at a hedge fund is using the NIFTY 50 stock datasets to build a 
 
 However, in March 2020, the global stock market saw unprecedented volatility due to the outbreak of the COVID-19 pandemic. In real-world situations like these, relying solely on past stock market data for modeling can lead to significant forecasting errors. This is because the historical data in the dataset does not account for unforeseen external shocks like pandemics, geopolitical events, or abrupt regulatory changes.
 
-![image](https://github.com/Irf4n-Muhammad/Data-Engineering-Project_NIFTY-50-Stock-Market-Data/assets/121205860/bfa8eaec-3fad-47d4-8c34-1d66ab50996e)
+<img width="700" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_NIFTY-50-Stock-Market-Data/assets/121205860/bfa8eaec-3fad-47d4-8c34-1d66ab50996e">
+
 
 In the context of the NIFTY 50 datasets, for example, the market behaviors during the pandemic period were quite different from historical trends. A trading algorithm relying heavily on past data might make flawed predictions and lead to substantial financial losses for the hedge fund.
 
@@ -109,26 +110,31 @@ Airflow is a tool to help the data engineer to monitor the ingesting data proces
     2. DAG issue - Solution = Since it would be very specific, so please check the log to see what's error there
     3. PORT is occupied - Solution : If you're using the docker, then you can find out what's machine that may use that port and you can delete that image in the docker (you can use docker apps or type the command in the git bash)
 
-## 8. DBT:
+## 8. Apache Spark
 
-<img width="700" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_COVID19-Dataset/assets/121205860/6104b129-366d-47c2-a3cb-7cda8357ac34">
+<img width="700" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_NIFTY-50-Stock-Market-Data/assets/121205860/0e5461ea-cd71-4472-9707-ba22cf96488b">
 
-DBT is the tool that you can transform your data using sql command. It's very simple and you can even create the documentation to track the history of the process and the dependencies of each files. To use DBT, you have two option to run it, either using local database or using dbt cloud. Each of them have their own benefits, but I suggest you to use dbt local since it's free.
+Spark is the best tool to handle large dataset and transform it to be useful and clean data. It will be used to download(extract) and will ingest into the google cloud storage bucket or bigquery using dataproc. 
 
-Here's the way to set up the DBT:
-
-1. Create the dictionary and clone your github repo
-2. Run the dbt install ( pip install dbt-bigquery ), you can change the bigquery with other tools, for more information check the dbt website
-3. Set the profiles.yaml to set the information you need for initialization
-4. Run ( dbt init ) to initialize
-5. Run ( dbt debug ) to check if it's successful
-6. Try to run the dbt ( dbt run ), make sure in the same directory where dbt_projects.yaml exist
-7. In the model folder, create new dir (staging) and (core)
-8. In the staging dir, create new file (schema.yaml and <your-file.sql>)
-9. Write your database in the schema.yaml and create the model in your-file.sql
-10. Use macros if you need to create function
-11. Set the packages if you need that and run ( dbt deps )
-12. Run the file using ( dbt run ) and check your bigquery table and see if the table has created
+1. Firstly, set the virtual machines using linux or in my case, I am using google cloud VM.
+2. Export the python argument to the terminal to init the pyspark, so it can be connected to the jupyter notebook eventually.
+3. Open jupyter notebook and create the new folder.
+4. Set the connection into the google cloud platform
+5. Import the pyspark and any package you need
+6. Create the spark variable using SparkSession.builder
+7. Read the file using spark.read
+8. Check the schema using .schema or printSchema()
+9. Edit the schema if needed to decrease the number of storage and fasthen the sending process
+10. Add and renamed the column if you think it will be benefitial
+11. Do the join if you need
+12. Input registerTempTable("file-nname")
+13. Using spark.sql to use the SQL command to your file
+14. Send to the bigquery afterwards
+15. Convert it to the pyhton script
+16. Using argparse package to receive the variable from our python command which will be inserted into our terminal
+17. Set up the cluster and run the job
+18. If succeed, please check the bigquery to make sure.
+19. Your work has done
 
 ## 9. Google Data Studio:
 
