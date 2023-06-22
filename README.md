@@ -116,6 +116,9 @@ Airflow is a tool to help the data engineer to monitor the ingesting data proces
 
 Spark is the best tool to handle large dataset and transform it to be useful and clean data. It will be used to download(extract) and will ingest into the google cloud storage bucket or bigquery using dataproc. 
 
+The general idea about what we gonna do in spark:
+So basically we wanna try to transfrom all 50+ data to be one file that cover the essential information that we need. We will merge the whole stocks data, which we have identified has the same number and column name. In case, there is an issue (according to name or data type that probably a bit different (in my case, I found one column that supposed to be date and not integer)). Then, there is one file that is additional informatiion of the entire stocks that we will join that as well using .join. After that we gonna partition by years for each company to see the progress of the stock year by year. 
+
 1. Firstly, set the virtual machines using linux or in my case, I am using google cloud VM.
 2. Export the python argument to the terminal to init the pyspark, so it can be connected to the jupyter notebook eventually.
 3. Open jupyter notebook and create the new folder.
