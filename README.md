@@ -44,6 +44,11 @@ The choosen technologies is variative and depends on the case and condition. The
 ## 4. Data Architecture:
 <img width="700" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_NIFTY-50-Stock-Market-Data/assets/121205860/90760468-bdb7-4997-a624-e46f4da061cc">
 
+Another alternative, if your file is not really big.
+
+<img width="700" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_NIFTY-50-Stock-Market-Data/assets/121205860/d835525f-66a4-47e4-b64b-e65ba9eeb178">
+
+
 ## 5. Data Description:
 
 The data is the price history and trading volumes of the fifty stocks in the index NIFTY 50 from NSE (National Stock Exchange) India. All datasets are at a day-level with pricing and trading values split across .cvs files for each stock along with a metadata file with some macro-information about the stocks itself. The data spans from 1st January, 2000 to 30th April, 2021.
