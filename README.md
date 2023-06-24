@@ -1,6 +1,19 @@
-## Data Engineering Project 2 / NIFTY 50 Stock Market Data
+## Data Engineering Project / NIFTY 50 Stock Market Data
 
 This project will leverage the historical stock data of 50 NIFTY (National Stock Exchange) India. It will help us to see the pattern and can be beneficial to predict the future stock progress. We would analyze the whole stock data individually and also collectively. 
+
+## List of Contents:
+1. [Description of the Problem](#1-description-of-the-problem)
+2. [Objective](#2-objective)
+3. [Technologies](#3-technologies)
+4. [Data Architecture](#4-data-architecture)
+5. [Data Description](#5-data-description)  
+6. [Set Up the Environment](#6-set-up-the-environment)  
+   1. [Google Cloud Platform](#61-google-cloud-platform)  
+   2. [Terraform](#62-terraform)
+7. [Airflow](#7-airflow)
+8. [Apache Spark](#8-apache-spark)
+9. [Google Data Studio](#9-google-data-studio)
 
 ## 1. Description of the Problem:
 
@@ -64,8 +77,6 @@ You gonna need some tools:
 
 ### 6.1 Google Cloud Platform:
 
-<img width="700" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_COVID19-Dataset/assets/121205860/5424e67f-d94a-45fa-8ab9-ac706aeddfad">
-
 In this chapter, we will set up several things you need to set up your firest google cloud platform accout before ready to be used
 
 1. Create the new project (you can use the old project, if you think it's fine)
@@ -75,8 +86,6 @@ In this chapter, we will set up several things you need to set up your firest go
 5. Create the new dataset (optional, due to you can make it along the process)
 
 ### 6.2 Terraform:
-
-<img width="700" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_COVID19-Dataset/assets/121205860/2faa8507-d149-4bc5-889d-9381c84f21be">
 
 The terraform will help us to make the stable and organizable environment for our google cloud and it's very easy to monitor since we only use python file to control. You can even share it to other team member if you work in group, so you all can assure using the same environment set up.
 
@@ -89,8 +98,6 @@ The terraform will help us to make the stable and organizable environment for ou
    4. terraform apply = run and make the update
 
 ## 7. Airflow:
-
-<img width="700" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_COVID19-Dataset/assets/121205860/0b299387-a421-49b7-aa4c-97c7816b37a9">
 
 Airflow is a tool to help the data engineer to monitor the ingesting data process. We can create the workflow by our own using python file and we can edit as like as we want. Here are some sets up to run the Airflow:
 
@@ -116,8 +123,6 @@ Airflow is a tool to help the data engineer to monitor the ingesting data proces
     3. PORT is occupied - Solution : If you're using the docker, then you can find out what's machine that may use that port and you can delete that image in the docker (you can use docker apps or type the command in the git bash)
 
 ## 8. Apache Spark
-
-<img width="700" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_NIFTY-50-Stock-Market-Data/assets/121205860/0e5461ea-cd71-4472-9707-ba22cf96488b">
 
 Spark is the best tool to handle large dataset and transform it to be useful and clean data. It will be used to download(extract) and will ingest into the google cloud storage bucket or bigquery using dataproc. 
 
@@ -145,8 +150,6 @@ So basically we wanna try to transfrom all 50+ data to be one file that cover th
 19. Your work has done
 
 ## 9. Google Data Studio:
-
-<img width="700" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_COVID19-Dataset/assets/121205860/5e3bd7a1-eee6-43a8-8912-985be393722e">
 
 It's pretty simple, you can connect your bigquery with google data studio and use the created table to be visualized. Build your dasboard which with the hope, it can answer all the problem solving question clearly.
 
